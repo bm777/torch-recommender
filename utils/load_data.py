@@ -58,13 +58,13 @@ def load_shoppy(args, **kwargs):
 
 
     # train, validation and test data
-    x_train = load_train_data(os.path.join("datasets", "Netflix", 'train.csv'))
+    x_train = load_train_data(os.path.join(args.root_folder, 'train.csv'))
     np.random.shuffle(x_train)
-    x_val_tr, x_val_te = load_tr_te_data(os.path.join("datasets", "Netflix", 'validation_tr.csv'),
-                                         os.path.join("datasets", "Netflix", 'validation_te.csv'))
+    x_val_tr, x_val_te = load_tr_te_data(os.path.join(args.root_folder, 'validation_tr.csv'),
+                                         os.path.join(args.root_folder, 'validation_te.csv'))
 
-    x_test_tr, x_test_te = load_tr_te_data(os.path.join("datasets", "Netflix", 'test_tr.csv'),
-                                           os.path.join("datasets", "Netflix", 'test_te.csv'))
+    x_test_tr, x_test_te = load_tr_te_data(os.path.join(args.root_folder, 'test_tr.csv'),
+                                           os.path.join(args.root_folder, 'test_te.csv'))
 
     # idle y's
     y_train = np.zeros((x_train.shape[0], 1))

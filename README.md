@@ -1,5 +1,5 @@
 # Collaborative Filtering system based on torch: 
-This is source code
+This code is open source.
 
 
 ### Requirements
