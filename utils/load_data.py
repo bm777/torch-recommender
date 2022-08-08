@@ -14,7 +14,7 @@ import pickle
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 # ======================================================================================================================
-def load_netflix(args, **kwargs):
+def load_shoppy(args, **kwargs):
 
     unique_sid = list()
     with open(os.path.join(args.root_folder, 'unique_sid.txt'), 'r') as f:
@@ -91,8 +91,8 @@ def load_netflix(args, **kwargs):
 # ======================================================================================================================
 # ======================================================================================================================
 def load_dataset(args, **kwargs):
-    if args.dataset_name == 'netflix':
-        train_loader, val_loader, test_loader, args = load_netflix(args, **kwargs)
+    if args.dataset_name == 'shoppy':
+        train_loader, val_loader, test_loader, args = load_shoppy(args, **kwargs)
     else:
         raise Exception('Wrong name of the dataset!')
 
