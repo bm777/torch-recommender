@@ -70,11 +70,11 @@ def experiment_vae(args, train_loader, val_loader, test_loader, model, optimizer
             torch.save(model, dir + args.model_name + '.model')
         else:
             e += 1
-            print('->model saved in else<-')
-            torch.save(model, dir + args.model_name + '.model')
             if epoch < args.warmup:
                 e = 0
             if e > args.early_stopping_epochs:
+                print('->Exiting & model saved<-')
+                torch.save(model, dir + args.model_name + '.model')
                 break
 
         # NaN
